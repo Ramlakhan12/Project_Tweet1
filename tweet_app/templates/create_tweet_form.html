@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+create tweet
+{% endblock %}
+
+{% block body_content %}
+{% if form.instance.pk %} Edit Tweet {% else %} Create tweet 
+{% endif %}
+<form method="post" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+{{form.as_p}}
+<button type="submit"> submit</button>
+</form>
+{% endblock %}
